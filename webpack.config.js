@@ -16,7 +16,7 @@ module.exports = (env ={}, argv = {}) => {
   return {
     mode,
     entry: {
-      app: `${srcPath}/index.js`,
+      app: `${srcPath}/app.js`,
     },
     output: {
       path: buildPath,
@@ -27,11 +27,12 @@ module.exports = (env ={}, argv = {}) => {
       rules: [
         {
           test: /\.js$/,
-          exclude: /node_modules/,
           use: 'babel-loader',
+          include: srcPath,
+          exclude: /node_modules/,
         },
         {
-          test: /\.(c|sc)ss$/,
+          test: /\.(css|scss)$/,
           use: [
             isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
             {
@@ -43,13 +44,17 @@ module.exports = (env ={}, argv = {}) => {
               },
             },
             'postcss-loader',
-          ]
+          ],
+          exclude: /node_modules/,
         },
         {
           test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
-          loader: 'url-loader',
-          options: {
-            limit: 8192,
+          use: {
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+              name: isDevelopment ? '[name].[ext]' : '[name].[hash].[ext]',
+            },
           },
         },
       ],
@@ -61,6 +66,9 @@ module.exports = (env ={}, argv = {}) => {
       },
     },
     plugins: [
+      new webpack.DefinePlugin({
+        DEVELOPMENT: JSON.stringify(isDevelopment),
+      }),
       new webpack.ProvidePlugin({
         React: 'react',
       }),

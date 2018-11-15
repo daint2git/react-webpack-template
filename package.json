@@ -1,7 +1,7 @@
 {
   "name": "react-webpack-template",
   "version": "1.0.0",
-  "description": "configuration react + webpack",
+  "description": "react + webpack config",
   "main": "index.js",
   "author": "daint2",
   "license": "ISC",
@@ -17,6 +17,7 @@
   "dependencies": {
     "@babel/runtime": "^7.1.5",
     "common-tags": "^1.8.0",
+    "prop-types": "^15.6.2",
     "react": "^16.6.1",
     "react-dom": "^16.6.1"
   },
