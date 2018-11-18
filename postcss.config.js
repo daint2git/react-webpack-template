@@ -8,5 +8,5 @@ const PLUGINS = [
 ]
 
 module.exports = {
-  plugins: PLUGINS.map(plugin => import(plugin)),
+  plugins: PLUGINS.map(plugin => require(plugin)),
 }
