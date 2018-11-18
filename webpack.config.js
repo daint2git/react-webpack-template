@@ -1,17 +1,15 @@
+const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-const path = require('path')
 const rootDir = path.resolve(process.cwd())
 const srcPath = path.resolve(rootDir, 'src')
 const assetsPath = path.resolve(rootDir, 'assets')
 const buildPath = path.resolve(rootDir, 'build')
 
-const getMode = mode => mode ? mode : 'development'
-
-module.exports = (env ={}, argv = {}) => {
-  const mode = getMode(argv.mode)
+module.exports = (_, argv = {}) => {
+  const mode = argv.mode || 'development'
   const isDevelopment = mode === 'development'
   return {
     mode,

@@ -1,11 +1,11 @@
 import TemplateTag from 'common-tags/es/TemplateTag'
 
 const cssModuleNameTag = styles => {
-  const localClass = key => Object.keys(styles).includes(key) ? styles[key] : key
+  const localClass = key => (Object.keys(styles).includes(key) ? styles[key] : key)
 
   return new TemplateTag({
     onSubstitution(substitution) {
-      return substitution ? substitution : ''
+      return substitution || ''
     },
 
     onEndResult(endResult) {
@@ -14,7 +14,7 @@ const cssModuleNameTag = styles => {
         .split(' ')
         .reduce((result, key) => `${result} ${localClass(key)}`, '')
         .trim()
-    }
+    },
   })
 }
 
