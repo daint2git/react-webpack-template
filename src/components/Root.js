@@ -6,8 +6,9 @@ const cssModules = cssModuleNameTag(styles)
 
 const Root = () => (
   <div className={cssModules`root`}>
-    <h1 className={cssModules`item`}>React Webpack Template</h1>
+    <h1 className={cssModules`heading`}>React Webpack Template</h1>
     <img src={reactAndwebpack} alt="react-webpack" />
+    <p className={cssModules`text`}>Try changing the source code</p>
   </div>
 )
 
