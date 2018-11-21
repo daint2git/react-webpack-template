@@ -89,12 +89,14 @@ module.exports = (_, argv = {}) => {
         chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css',
       }),
     ],
-    devServer: {
-      contentBase: buildPath,
-      host: '0.0.0.0',
-      port: 9999,
-      historyApiFallback: true,
-    },
+    devServer: isDevelopment
+      ? {
+          contentBase: buildPath,
+          host: '0.0.0.0',
+          port: 6969,
+          historyApiFallback: true,
+        }
+      : {},
     devtool: isDevelopment ? 'eval-source-map' : 'source-map',
   }
 }
