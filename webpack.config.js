@@ -91,10 +91,9 @@ module.exports = (_, argv = {}) => {
     ],
     devServer: {
       contentBase: buildPath,
+      host: '0.0.0.0',
       port: 9999,
       historyApiFallback: true,
-      open: true,
-      noInfo: true,
     },
     devtool: isDevelopment ? 'eval-source-map' : 'source-map',
   }
