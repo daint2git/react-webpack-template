@@ -18,7 +18,7 @@ docker-compose up app
 3. serve -s build
 ```
 
-## Coding: auto fix on save (add to setting vscode)
+## Eslint: auto fix on save (add to setting vscode)
 ```
-"eslint.autoFixOnSave": true,
+"eslint.autoFixOnSave": true
 ```
