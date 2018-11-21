@@ -30,7 +30,7 @@ module.exports = (_, argv = {}) => {
           exclude: /node_modules/,
         },
         {
-          test: /\.(css|scss)$/,
+          test: /\.(c|sc)ss$/,
           use: [
             isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
             {
@@ -93,6 +93,8 @@ module.exports = (_, argv = {}) => {
       contentBase: buildPath,
       port: 9999,
       historyApiFallback: true,
+      open: true,
+      noInfo: true,
     },
     devtool: isDevelopment ? 'eval-source-map' : 'source-map',
   }
