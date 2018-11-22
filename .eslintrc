@@ -32,14 +32,14 @@
 
   "rules": {
     "prettier/prettier": ["error", {
-      "printWidth": 80,
+      "printWidth": 100,
       "semi": false,
       "singleQuote": true,
       "trailingComma": "all"
     }],
 
     "max-len": ["off", {
-      "code": 80
+      "code": 100
     }],
     "semi": ["off", "never"],
     "quotes": ["off", "single"],
