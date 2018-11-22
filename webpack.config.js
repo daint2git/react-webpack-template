@@ -93,7 +93,7 @@ module.exports = (_, argv = {}) => {
       ? {
           contentBase: buildPath,
           host: '0.0.0.0',
-          port: 6969,
+          port: 9999,
           historyApiFallback: true,
         }
       : {},
