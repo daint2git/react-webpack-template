@@ -1,23 +1,16 @@
-import BasicRouting from 'components/BasicRouting'
-import CustomLink from 'components/CustomLink'
-import NestedRouting from 'components/NestedRouting'
-import URLParameters from 'components/URLParameters'
+import reactLogo from 'svg/react-logo.svg'
+import webpackLogo from 'svg/webpack-logo.svg'
 import cssModuleNameTag from 'utils/cssModuleNameTag'
 import styles from './Root.scss'
 
 const cssModules = cssModuleNameTag(styles)
 
-const Spacer = () => <div className={cssModules`spacer`} />
-
 const Root = () => (
   <div className={cssModules`root`}>
-    <BasicRouting />
-    <Spacer />
-    <CustomLink />
-    <Spacer />
-    <NestedRouting />
-    <Spacer />
-    <URLParameters />
+    <h1 className={cssModules`header`}>React Webpack Template</h1>
+    <img className={cssModules`logo`} src={reactLogo} alt="react-logo" />
+    <img className={cssModules`logo`} src={webpackLogo} alt="webpack-logo" />
+    <p className={cssModules`text`}>Edit something and save to reload.</p>
   </div>
 )
 
